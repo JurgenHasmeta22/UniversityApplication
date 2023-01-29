@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JpaBuddyIdeaProjectConfig" migrateIndexesAndConstraints="true">
+    <option name="defaultUnitInitialized" value="true" />
     <option name="renamerInitialized" value="true" />
     <option name="reverseEngineeringLastDbConnectionId" value="f1741299-1d98-435a-9aa4-e9e3e2ed2705" />
     <option name="reLastEntityCreationPackage" value="universityApp/src/main/java/com/University/universityApp/dal" />
