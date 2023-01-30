@@ -37,15 +37,15 @@ public class Course {
     public Date dataPerfundimit;
     @Column(nullable = false)
     public int semestri;
+    
 
-
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course",fetch = FetchType.EAGER)
     private Set<Announcement> announcements = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course",fetch = FetchType.EAGER)
     private Set<UserCourse> userCourses = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course",fetch = FetchType.EAGER)
     private Set<Comment> comments = new LinkedHashSet<>();
 
 }

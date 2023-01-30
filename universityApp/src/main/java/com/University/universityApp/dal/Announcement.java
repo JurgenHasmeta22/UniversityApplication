@@ -20,8 +20,8 @@ public class Announcement {
     @NotNull
     @Column(name = "pershkrimi", nullable = false, length = 5000)
     private String pershkrimi;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "courseId")
     private Course course;

@@ -41,25 +41,25 @@ public class User{
     public String profilePicture;
 
 
-    @OneToMany(mappedBy = "userId1")
+    @OneToMany(mappedBy = "userId1",fetch = FetchType.EAGER)
     private Set<Friendship> friendshipsSent = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "userId2")
+    @OneToMany(mappedBy = "userId2",fetch = FetchType.EAGER)
     private Set<Friendship> friendshipsReceived = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
     private Set<CommentLike> commentLikes = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
     private Set<Notification> notifications = new LinkedHashSet<>();
-
-    @OneToMany(mappedBy = "user")
+    
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
     private Set<UserCourse> userCourses = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
     private Set<Comment> comments = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",fetch = FetchType.EAGER)
     private Set<AnnouncementLike> announcementLikes = new LinkedHashSet<>();
 
 

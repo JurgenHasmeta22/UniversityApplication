@@ -1,16 +1,12 @@
 package com.University.universityApp.controllers;
 
-//import common.server.identity.dto.PasswordChangeDto;
-//import common.server.identity.dto.UserGetDto;
-//import common.server.identity.dto.UserPatchDto;
-//import common.server.identity.dto.UserPostDto;
-import com.University.universityApp.services.CourseService;
+
+import com.University.universityApp.dal.User;
+import com.University.universityApp.dal.UserCourse;
 import com.University.universityApp.services.UserService;
-//import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import lombok.RequiredArgsConstructor;
 import java.util.List;
-import java.util.UUID;
+
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -21,27 +17,28 @@ public class UserController {
     {
         this.userService = userService;
     }
-    /*@PostMapping
-    public UserGetDto save(@RequestBody UserPostDto userPostDto) {
-        return userService.save(userPostDto);
+    @PostMapping
+    public UserCourse addUserCourse(@PathVariable int userId,@PathVariable int courseId) {
+        return userService.addUserCourse(userId, courseId);
     }
-
+/* 
     @PatchMapping("{id}")
     public UserGetDto update(@PathVariable UUID id, @RequestBody UserPatchDto userPatchDto) {
         return userService.update(id, userPatchDto);
     }
         */
-   /* @GetMapping("{id}")
-    public UserGetDto find(@PathVariable UUID id) {
-        return userService.find(id);
-    }
-*/
-    /*
-    @GetMapping
-    public List<UserGetDto> findAll() {
-        return userService.findAll();
+    @GetMapping("{id}")
+    public User find(@PathVariable int id) {
+        return userService.getUserById(id);
     }
 
+    
+    @GetMapping
+    public List<User> findAll() {
+        return userService.getAllUsers();
+    }
+  
+/* 
     @PatchMapping("{id}/password")
     public void updatePassword(@PathVariable UUID id, @RequestBody PasswordChangeDto passwordChangeDto) {
         userService.changePassword(id, passwordChangeDto);

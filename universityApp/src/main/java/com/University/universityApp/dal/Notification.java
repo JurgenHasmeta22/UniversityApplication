@@ -17,7 +17,7 @@ public class Notification {
     @Column(name = "pershkrimi", length = 500)
     private String pershkrimi;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "userId")
     private User user;

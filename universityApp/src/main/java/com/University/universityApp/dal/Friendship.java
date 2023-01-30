@@ -16,11 +16,11 @@ public class Friendship {
     @Column(name = "statusi", nullable = false, length = 100)
     private String statusi;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId1")
     private User userId1;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId2")
     private User userId2;
 
